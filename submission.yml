@@ -1,0 +1,15 @@
+# Submission Configuration
+# This file defines commands for setting up, testing, and running the application
+
+setup:
+  - npm install
+  - cp .env.example .env
+
+test:
+  - npm test
+
+start:
+  - docker-compose up -d
+  - npm run migrate
+  - npm run worker &
+  - npm start
